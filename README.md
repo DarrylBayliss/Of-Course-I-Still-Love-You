@@ -1,6 +1,6 @@
 # Of Course I Still Love You
 
-An app showing rocket launches using the [SpaceX REST Api](https://github.com/r-spacex/SpaceX-API). Written in Flutter.
+An app showing rocket launches using the [SpaceX REST Api](https://github.com/r-spacex/SpaceX-API). Written using Dart & Flutter.
 
 # Commentry
 
