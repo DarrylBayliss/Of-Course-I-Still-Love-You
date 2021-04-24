@@ -1,6 +1,8 @@
 # Of Course I Still Love You
 
-An app showing rocket launches using the [SpaceX REST Api](https://github.com/r-spacex/SpaceX-API). Written using Dart & Flutter.
+An app showing rocket launches using the [SpaceX REST Api](https://github.com/r-spacex/SpaceX-API). 
+
+Written using Dart & Flutter.
 
 # Commentry
 
@@ -49,7 +51,7 @@ I struggled to add UI tests using **flutter_driver**. I put this down to a lack 
 
 # Dependencies
 
-I added the following dependencies to the app:
+The following dependencies were added to the app:
 
 http: ^0.13.1 (Networking)
 provider: ^4.3.3 (Observable support)
