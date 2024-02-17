@@ -1,6 +1,6 @@
 # Of Course I Still Love You
 
-![Of Course I Still Love You App Screen](assets/images/AppScreen.png)
+![Of Course I Still Love You App Screen](/images/AppScreen.png)
 
 An app showing rocket launches using the [SpaceX REST Api](https://github.com/r-spacex/SpaceX-API). 
 
