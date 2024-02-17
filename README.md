@@ -54,9 +54,9 @@ Unit Tests are added to cover much of the underlying logic. The tests use mocked
 
 The following dependencies are used in the app:
 
-http: (Networking)
-provider: (Observable support)
-rxDart: (Reactive Bindings)
-shared_preferences: (Android / iOS local storage support)
-intl: (Date Formatting)
-syncfusion_flutter_charts: (Line Chart Widget)
+- http: (Networking)
+- provider: (Observable support)
+- rxDart: (Reactive Bindings)
+- shared_preferences: (Android / iOS local storage support)
+- intl: (Date Formatting)
+- syncfusion_flutter_charts: (Line Chart Widget)
