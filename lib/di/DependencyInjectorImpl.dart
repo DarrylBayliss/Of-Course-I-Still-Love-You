@@ -9,7 +9,6 @@ import 'package:of_course_i_still_love_you/presentation/pages/rocketdetail/Rocke
 import 'package:of_course_i_still_love_you/presentation/pages/rocketslist/RocketsListViewModel.dart';
 
 class DependencyInjectorImpl implements DependencyInjector {
-
   RocketsListViewModel buildRocketsListViewModel() {
     return RocketsListViewModel(GetRocketsUseCaseImpl(
         SpaceXLaunchesRepository(SpaceXApiDataSource()),
@@ -17,9 +16,9 @@ class DependencyInjectorImpl implements DependencyInjector {
   }
 
   RocketDetailViewModel buildRocketDetailViewModel(Rocket rocket) {
-    return RocketDetailViewModel(rocket,
+    return RocketDetailViewModel(
+        rocket,
         GetRocketLaunchesUseCaseImpl(
-            SpaceXLaunchesRepository(
-                SpaceXApiDataSource())));
+            SpaceXLaunchesRepository(SpaceXApiDataSource())));
   }
 }

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:of_course_i_still_love_you/di/DependencyInjectorImpl.dart';
+import 'package:of_course_i_still_love_you/domain/entities/Rocket.dart';
 import 'package:of_course_i_still_love_you/presentation/pages/rocketdetail/RocketDetailPage.dart';
 import 'presentation/pages/rocketslist/RocketsListPage.dart';
 
 void main() {
-
-  DependencyInjectorImpl dependencyInjector = DependencyInjectorImpl();
+  final DependencyInjectorImpl dependencyInjector = DependencyInjectorImpl();
 
   runApp(OfCourseIStillLoveYouApp(dependencyInjector));
 }
 
 class OfCourseIStillLoveYouApp extends StatelessWidget {
-
   DependencyInjectorImpl dependencyInjector;
 
   OfCourseIStillLoveYouApp(this.dependencyInjector);
@@ -26,11 +25,17 @@ class OfCourseIStillLoveYouApp extends StatelessWidget {
         ),
         home: RocketsListPage(dependencyInjector),
         onGenerateRoute: (RouteSettings settings) {
-          var routes = <String, WidgetBuilder>{
-            RocketDetailPage.routeName: (context) => RocketDetailPage(settings.arguments, dependencyInjector)
-          };
-          WidgetBuilder builder = routes[settings.name];
-          return MaterialPageRoute(builder: (context) => builder(context));
+          if (settings.name == RocketDetailPage.routeName) {
+            final rocket = settings.arguments as Rocket;
+            return MaterialPageRoute(
+              builder: (context) {
+                return RocketDetailPage(rocket, dependencyInjector);
+              },
+            );
+          }
+
+          assert(false, 'Need to implement ${settings.name}');
+          return null;
         });
   }
 }

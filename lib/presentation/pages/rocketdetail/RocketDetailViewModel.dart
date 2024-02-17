@@ -3,6 +3,7 @@ import "package:collection/collection.dart";
 import 'package:of_course_i_still_love_you/domain/entities/Rocket.dart';
 import 'package:of_course_i_still_love_you/domain/entities/RocketLaunch.dart';
 import 'package:of_course_i_still_love_you/domain/usecases/GetRocketLaunchesUseCaseImpl.dart';
+import 'dart:async';
 
 class RocketDetailViewModel with ChangeNotifier {
   Rocket rocket;
@@ -27,7 +28,6 @@ class RocketDetailViewModel with ChangeNotifier {
   }
 
   List<RocketLaunchGraphData> getLaunchesGraphData() {
-
     Map<int, List<RocketLaunch>> launchesGroupedByYear =
         groupBy(launches, (RocketLaunch launch) {
       return launch.date.year;

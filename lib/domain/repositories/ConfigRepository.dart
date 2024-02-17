@@ -1,6 +1,6 @@
+import 'dart:async';
 
 abstract class ConfigRepository {
-
   // Is it the first time the app is open.
   Future<bool> isAppOpenForFirstTime();
 

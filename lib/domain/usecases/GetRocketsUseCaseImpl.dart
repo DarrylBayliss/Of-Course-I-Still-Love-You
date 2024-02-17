@@ -6,7 +6,6 @@ import 'package:of_course_i_still_love_you/domain/repositories/LaunchesRepositor
 import 'package:of_course_i_still_love_you/domain/usecases/GetRocketsUseCase.dart';
 
 class GetRocketsUseCaseImpl implements GetRocketsUseCase {
-
   final LaunchesRepository _launchesRepository;
 
   final AppConfigRepository _appConfigRepository;
@@ -15,7 +14,6 @@ class GetRocketsUseCaseImpl implements GetRocketsUseCase {
 
   @override
   Future<List<Rocket>> getRockets() async {
-
     try {
       return await _launchesRepository.getRockets();
     } catch (exception) {

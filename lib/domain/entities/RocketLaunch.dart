@@ -1,4 +1,3 @@
-import 'package:of_course_i_still_love_you/data/dtos/MissionPatchDTO.dart';
 import 'package:of_course_i_still_love_you/data/dtos/RocketLaunchDTO.dart';
 
 import 'MissionPatch.dart';
@@ -10,7 +9,12 @@ class RocketLaunch {
   bool success;
   MissionPatch patch;
 
-  RocketLaunch({this.id, this.name, this.date, this.success, this.patch});
+  RocketLaunch(
+      {required this.id,
+      required this.name,
+      required this.date,
+      required this.success,
+      required this.patch});
 
   factory RocketLaunch.fromDTO(RocketLaunchDTO rocketLaunchDTO) {
     return RocketLaunch(

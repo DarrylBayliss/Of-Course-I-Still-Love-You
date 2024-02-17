@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:of_course_i_still_love_you/data/api/SpaceXApiDataSource.dart';
 import 'package:of_course_i_still_love_you/di/DependencyInjectorImpl.dart';
 import 'package:of_course_i_still_love_you/domain/entities/Rocket.dart';
-import 'package:of_course_i_still_love_you/domain/entities/RocketLaunch.dart';
-import 'package:of_course_i_still_love_you/domain/repositories/SpaceXLaunchesRepository.dart';
-import 'package:of_course_i_still_love_you/domain/usecases/GetRocketLaunchesUseCaseImpl.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
 import 'RocketDetailViewModel.dart';
 
 class RocketDetailPage extends StatefulWidget {
-
   static const routeName = '/rocketDetail';
 
   final Rocket rocket;
@@ -23,7 +17,8 @@ class RocketDetailPage extends StatefulWidget {
 
   @override
   _RocketDetailPageState createState() {
-    RocketDetailViewModel viewModel = dependencyInjector.buildRocketDetailViewModel(rocket);
+    RocketDetailViewModel viewModel =
+        dependencyInjector.buildRocketDetailViewModel(rocket);
     return _RocketDetailPageState(viewModel);
   }
 }
@@ -42,7 +37,6 @@ class _RocketDetailPageState extends State<RocketDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-
     const int lineGraphItem = 0;
 
     const int rocketDescriptionItem = 1;
@@ -65,11 +59,13 @@ class _RocketDetailPageState extends State<RocketDetailPage> {
                 child: Consumer<RocketDetailViewModel>(
                   builder: (context, rocketLaunchesListModel, child) {
                     return ListView.builder(
-                        itemCount: rocketLaunchesListModel.launches.length + lineGraphAndDescriptionIndexOffset,
+                        itemCount: rocketLaunchesListModel.launches.length +
+                            lineGraphAndDescriptionIndexOffset,
                         itemBuilder: (context, index) {
                           switch (index) {
                             case lineGraphItem:
-                              return SfCartesianChart(series: <ChartSeries>[
+                              return SfCartesianChart(series: <LineSeries<
+                                  RocketLaunchGraphData, int>>[
                                 LineSeries<RocketLaunchGraphData, int>(
                                     dataSource: model.getLaunchesGraphData(),
                                     xValueMapper:
@@ -79,13 +75,12 @@ class _RocketDetailPageState extends State<RocketDetailPage> {
                                         (RocketLaunchGraphData data, _) =>
                                             data.launches)
                               ]);
-                              break;
                             case rocketDescriptionItem:
                               return ListTile(
                                   title: Text("${model.rocket.description}"));
-                              break;
                             default:
-                              final launch = rocketLaunchesListModel.launches[index - lineGraphAndDescriptionIndexOffset];
+                              final launch = rocketLaunchesListModel.launches[
+                                  index - lineGraphAndDescriptionIndexOffset];
 
                               return ListTile(
                                 leading: Image.network(launch.patch.large),
@@ -95,7 +90,6 @@ class _RocketDetailPageState extends State<RocketDetailPage> {
                                     "Successful Launch: ${launch.success ? "Yes" : "No"}"),
                                 isThreeLine: true,
                               );
-                              break;
                           }
                         });
                   },

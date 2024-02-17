@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'MissionPatchDTO.dart';
 
 class RocketLaunchDTO {
@@ -9,14 +7,14 @@ class RocketLaunchDTO {
   bool success;
   MissionPatchDTO patch;
 
-  RocketLaunchDTO({this.id,
-    this.name,
-    this.date,
-    this.success,
-    this.patch});
+  RocketLaunchDTO(
+      {required this.id,
+      required this.name,
+      required this.date,
+      required this.success,
+      required this.patch});
 
   factory RocketLaunchDTO.fromJson(Map<String, dynamic> json) {
-
     return RocketLaunchDTO(
         id: json['id'],
         name: json['name'],

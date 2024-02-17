@@ -10,13 +10,13 @@ class RocketDTO {
   final EnginesDTO engines;
 
   RocketDTO(
-      {this.id,
-      this.name,
-      this.country,
-      this.description,
-      this.active,
-      this.flickrImages,
-      this.engines});
+      {required this.id,
+      required this.name,
+      required this.country,
+      required this.description,
+      required this.active,
+      required this.flickrImages,
+      required this.engines});
 
   factory RocketDTO.fromJson(Map<String, dynamic> json) {
     return RocketDTO(

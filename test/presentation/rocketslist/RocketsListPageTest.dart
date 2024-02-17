@@ -15,10 +15,8 @@ void main() {
 
     // Close the connection to the driver after the tests have completed.
     tearDownAll(() async {
-      if (driver != null) {
-        driver.close();
-      }
-    });
+      driver.close();
+        });
 
     test('First page title is Rockets', () async {
       // Use the `driver.getText` method to verify the counter starts at 0.

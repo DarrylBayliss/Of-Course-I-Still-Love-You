@@ -11,13 +11,13 @@ class Rocket {
   final Engines engines;
 
   Rocket(
-      {this.id,
-      this.name,
-      this.country,
-      this.description,
-      this.active,
-      this.flickrImages,
-      this.engines});
+      {required this.id,
+      required this.name,
+      required this.country,
+      required this.description,
+      required this.active,
+      required this.flickrImages,
+      required this.engines});
 
   factory Rocket.fromDTO(RocketDTO rocketDTO) {
     return Rocket(
