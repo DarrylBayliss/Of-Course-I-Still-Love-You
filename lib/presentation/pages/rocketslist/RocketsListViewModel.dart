@@ -3,14 +3,20 @@ import 'package:of_course_i_still_love_you/domain/entities/Rocket.dart';
 import 'package:of_course_i_still_love_you/domain/usecases/GetRocketsUseCase.dart';
 import 'dart:async';
 
+import 'package:of_course_i_still_love_you/domain/usecases/IsAppOpenForFirstTimeUseCase.dart';
+import 'package:of_course_i_still_love_you/domain/usecases/SetAppOpenForFirstTimeUseCase.dart';
+
 class RocketsListViewModel with ChangeNotifier {
   final List<Rocket> rockets = List.empty(growable: true);
 
   bool active = false;
 
   final GetRocketsUseCase getRocketsUseCase;
+  final IsAppOpenForFirstTimeUseCase isAppOpenForFirstTimeUseCase;
+  final SetAppOpenForFirstTimeUseCase setAppOpenForFirstTimeUseCase;
 
-  RocketsListViewModel(this.getRocketsUseCase);
+  RocketsListViewModel(this.getRocketsUseCase,
+      this.isAppOpenForFirstTimeUseCase, this.setAppOpenForFirstTimeUseCase);
 
   void getRockets() {
     getRocketsUseCase.getRockets().then((rockets) {
@@ -31,10 +37,10 @@ class RocketsListViewModel with ChangeNotifier {
   }
 
   Future<bool> isAppOpenForFirstTime() {
-    return getRocketsUseCase.isAppOpenForFirstTime();
+    return isAppOpenForFirstTimeUseCase.isAppOpenForFirstTime();
   }
 
   void setAppOpenForFirstTime() {
-    return getRocketsUseCase.setAppOpenForFirstTime();
+    return setAppOpenForFirstTimeUseCase.setAppOpenForFirstTime();
   }
 }
