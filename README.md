@@ -28,6 +28,8 @@ The two screens in the app are **RocketsListPage.dart** and **RocketDetailPage.d
 
 # Rocket List Page
 
+![Rocket List Page](/images/AppScreen.png)
+
 **RocketsListPage.dart** shows a listview of rockets, queried from the network. The list can be filtered to show active rockets by tapping the button in the appbar, at the top right of the screen.
 
 When the app is opened for the first time, a dialog is shown to welcome the user. When the user taps on the ok button, a boolean is stored in local storage so the app knows to avoid showing the dialog again.
@@ -35,6 +37,8 @@ When the app is opened for the first time, a dialog is shown to welcome the user
 Tapping a rocket in the list will transition the app to the **RocketDetailPage.dart**.
 
 # Rocket Detail Page
+
+![Rocket Detail Page](/images/RocketDetailPage.png)
 
 **RocketDetailPage.dart** shows particular information about a rocket. The data is received by making a network request, using the rocketId as a query parameter.
 
