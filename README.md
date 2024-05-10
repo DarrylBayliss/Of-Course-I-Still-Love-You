@@ -40,15 +40,15 @@ Tapping a rocket in the list will transition the app to the **RocketDetailPage.d
 
 ![Rocket Detail Page](/images/RocketDetailPage.png)
 
-**RocketDetailPage.dart** shows particular information about a rocket. The data is received by making a network request, using the rocketId as a query parameter.
+**RocketDetailPage.dart** shows detailed information about a rocket. The data is received by making a network request, using the rocketId as a query parameter.
 
-The data can be refreshed by pulling down from the top of the screen, where a refresh indicator appears. The returned data is showing using a listview, containing different items. An improvement I would like to make is to show the refresh indicator when the screen first appears.
+The data can be refreshed by pulling down from the top of the screen where a refresh indicator appears. The returned data is shown using a listview containing different items.
 
 The first ListItem is a line chart showing the amount of launches for the rocket over the years.
 
 The second ListItem is a description of the rocket. This comes from the **Rocket** object, passed in as a parameter from **RocketsListPage.dart**.
 
-The final ListItems are launches that occurred for the rocket, the list is ordered by year.
+The final ListItems are launches that occurred for the rocket, the list is ordered by year. The patch image for each launch are loaded in via a network call.
 
 # Testing
 
@@ -58,9 +58,9 @@ Unit Tests are added to cover much of the underlying logic. The tests use mocked
 
 The following dependencies are used in the app:
 
-- http: (Networking)
-- provider: (Observable support)
-- rxDart: (Reactive Bindings)
-- shared_preferences: (Android / iOS local storage support)
-- intl: (Date Formatting)
-- syncfusion_flutter_charts: (Line Chart Widget)
+- [http](https://pub.dev/packages/http)
+- [provider](https://pub.dev/packages/provider)
+- [rxDart](https://pub.dev/packages/rxdart)
+- [shared_preferences](https://pub.dev/packages/shared_preferences)
+- [intl](https://pub.dev/packages/intl)
+- [syncfusion_flutter_charts](https://pub.dev/packages/syncfusion_flutter_charts)
