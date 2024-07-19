@@ -58,9 +58,9 @@ Unit Tests are added to cover much of the underlying logic. The tests use mocked
 
 The following dependencies are used in the app:
 
-- [Expo Framework](https://expo.dev/)
-- [Expo Router](https://docs.expo.dev/router/introduction/)
-- [Expo Async Storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
-- [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
+- [http](https://pub.dev/packages/http)
+- [provider](https://pub.dev/packages/provider)
+- [rxDart](https://pub.dev/packages/rxdart)
+- [shared_preferences](https://pub.dev/packages/shared_preferences)
 - [intl](https://pub.dev/packages/intl)
 - [syncfusion_flutter_charts](https://pub.dev/packages/syncfusion_flutter_charts)
