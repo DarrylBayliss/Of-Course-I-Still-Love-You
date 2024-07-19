@@ -11,7 +11,7 @@ void main() {
 }
 
 class OfCourseIStillLoveYouApp extends StatelessWidget {
-  DependencyInjectorImpl dependencyInjector;
+  final DependencyInjectorImpl dependencyInjector;
 
   OfCourseIStillLoveYouApp(this.dependencyInjector);
 
